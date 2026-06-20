@@ -21,6 +21,7 @@ TaskDto _$TaskDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TaskDto {
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'todo')
   String get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   bool get completed => throw _privateConstructorUsedError;
@@ -42,7 +43,7 @@ abstract class $TaskDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String title,
+      @JsonKey(name: 'todo') String title,
       String? description,
       bool completed,
       String? dueDate});
@@ -103,7 +104,7 @@ abstract class _$$TaskDtoImplCopyWith<$Res> implements $TaskDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String title,
+      @JsonKey(name: 'todo') String title,
       String? description,
       bool completed,
       String? dueDate});
@@ -158,7 +159,7 @@ class __$$TaskDtoImplCopyWithImpl<$Res>
 class _$TaskDtoImpl implements _TaskDto {
   const _$TaskDtoImpl(
       {required this.id,
-      required this.title,
+      @JsonKey(name: 'todo') required this.title,
       this.description,
       this.completed = false,
       this.dueDate});
@@ -169,6 +170,7 @@ class _$TaskDtoImpl implements _TaskDto {
   @override
   final int id;
   @override
+  @JsonKey(name: 'todo')
   final String title;
   @override
   final String? description;
@@ -221,7 +223,7 @@ class _$TaskDtoImpl implements _TaskDto {
 abstract class _TaskDto implements TaskDto {
   const factory _TaskDto(
       {required final int id,
-      required final String title,
+      @JsonKey(name: 'todo') required final String title,
       final String? description,
       final bool completed,
       final String? dueDate}) = _$TaskDtoImpl;
@@ -231,6 +233,7 @@ abstract class _TaskDto implements TaskDto {
   @override
   int get id;
   @override
+  @JsonKey(name: 'todo')
   String get title;
   @override
   String? get description;

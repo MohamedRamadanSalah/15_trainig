@@ -9,7 +9,7 @@ part of 'task_dto.dart';
 _$TaskDtoImpl _$$TaskDtoImplFromJson(Map<String, dynamic> json) =>
     _$TaskDtoImpl(
       id: (json['id'] as num).toInt(),
-      title: json['title'] as String,
+      title: json['todo'] as String,
       description: json['description'] as String?,
       completed: json['completed'] as bool? ?? false,
       dueDate: json['dueDate'] as String?,
@@ -18,7 +18,7 @@ _$TaskDtoImpl _$$TaskDtoImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TaskDtoImplToJson(_$TaskDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'title': instance.title,
+      'todo': instance.title,
       'description': instance.description,
       'completed': instance.completed,
       'dueDate': instance.dueDate,

@@ -7,7 +7,7 @@ part 'task_dto.g.dart';
 class TaskDto with _$TaskDto{
   const factory TaskDto({
     required int id,
-    required String title,
+    @JsonKey(name: 'todo') required String title,
     String? description,
     @Default(false) bool completed,
     String? dueDate,
