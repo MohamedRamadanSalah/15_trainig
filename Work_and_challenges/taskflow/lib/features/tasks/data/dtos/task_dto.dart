@@ -18,8 +18,8 @@ class TaskDto {
 
   factory TaskDto.fromJson(Map<String, dynamic> json) {
     return TaskDto(
-      id: json['id'] as String,
-      title: json['title'] as String,
+      id: (json['id'] as int).toString(),
+      title: json['todo'] as String,
       description: json['description'] as String?,
       completed: json['completed'] as bool? ?? false,
       dueDate: json['due_date'] as String?,

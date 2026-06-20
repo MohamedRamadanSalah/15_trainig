@@ -12,15 +12,14 @@ abstract interface class TaskRemoteDataSource {
 class TaskRemoteDataSourceImpl implements TaskRemoteDataSource {
   TaskRemoteDataSourceImpl(this._dio);
   final Dio _dio;
-
   @override
   Future<List<TaskDto>> getTasks({String? cursor}) async {
     try {
       final res = await _dio.get<Map<String, dynamic>>(
-        '/tasks',
+        '/todos',
         queryParameters: {if (cursor != null) 'cursor': cursor},
       );
-      final list = (res.data?['data'] as List? ?? []);
+      final list = (res.data?['todos'] as List? ?? []);
       return list
           .map((e) => TaskDto.fromJson(e as Map<String, dynamic>))
           .toList();
